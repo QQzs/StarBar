@@ -4,10 +4,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private boolean isInteger = false;
+    private RatingBar ratingbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +42,15 @@ public class MainActivity extends AppCompatActivity {
                 Button button = (Button) v;
                 starBar.setIntegerMark(isInteger);
                 button.setText("整数评分: "+isInteger);
+            }
+        });
+
+        ratingbar = (RatingBar) findViewById(R.id.ratingbar_view);
+        ratingbar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                Toast.makeText(MainActivity.this, "rating:" + String.valueOf(rating),
+                        Toast.LENGTH_LONG).show();
             }
         });
     }

@@ -72,4 +72,28 @@
         ratingbar:starCount="5"
         ratingbar:starSize="20dp"/>
 
+    <RatingBar
+        android:id="@+id/ratingbar_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/starBar2"
+        android:layout_marginTop="10dp"
+        style="@style/foodRatingBar"
+        android:numStars="5"
+        android:rating="3.3"
+        android:stepSize="0.1"
+        />
+
+    <RatingBar
+        android:id="@+id/ratingbar_view2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ratingbar_view"
+        android:layout_marginTop="10dp"
+        style="@style/foodRatingBar2"
+        android:numStars="5"
+        android:rating="3.3"
+        android:stepSize="1"
+        />
+
 </RelativeLayout>
